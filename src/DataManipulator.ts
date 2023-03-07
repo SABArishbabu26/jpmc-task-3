@@ -16,8 +16,8 @@ export class DataManipulator {
     const priceABC = (serverRespond[0].top_ask.price + serverRespond[0].top_bid.price) / 2;
     const priceDEF = (serverRespond[1].top_ask.price + serverRespond[1].top_bid.price) / 2;
     const ratio = priceABC/priceDEF;
-    const upper_bound = 1 + 0.07;
-    const lower_bound = 1 - 0.08;
+    const upperBound = 1 + 0.07;
+    const lowerBound = 1 - 0.08;
     return {
       price_abc: priceABC,
       price_def: priceDEF,
