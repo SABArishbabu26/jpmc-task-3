@@ -179,6 +179,7 @@ def shutdown(self):
     """ Override MRO to shutdown properly. """
     self.socket.close()
     http.server.HTTPServer.shutdown(self)
+    return shutdown
 
 
 def route(path):
