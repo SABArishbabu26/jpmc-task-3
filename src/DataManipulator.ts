@@ -1,4 +1,4 @@
-import { ServerRespond } from './DataStreamer';
+import {ServerRespond} from './DataStreamer';
 
 export interface Row {
   price_abc: number,
@@ -7,12 +7,12 @@ export interface Row {
   timestamp: Date,
   upper_bound: number,
   lower_bound: number,
-  target_alert: number | undefined,
+  trigger_alert: number | undefined,
 }
 
 
 export class DataManipulator {
-  static generateRow(serverResponds: ServerRespond[]): Row {
+  static generateRow(serverRespond: ServerRespond[]): Row {
     const priceABC = (serverRespond[0].top_ask.price + serverRespond[0].top_bid.price) / 2;
     const priceDEF = (serverRespond[1].top_ask.price + serverRespond[1].top_bid.price) / 2;
     const ratio = priceABC/priceDEF;
